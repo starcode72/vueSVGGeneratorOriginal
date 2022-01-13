@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Generate</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <!-- circle-generate -->
+    <svg xmlns="http://www.w3.org/2000/svg" v-bind:fill="panelColor"
+    v-bind:stroke="strokeColor" v-bind:stroke-width="strokeWidth"
+    v-bind:width="width" v-bind:height="height" style="border: #000 1px solid;">
+      <circle v-bind:cx="cx" v-bind:cy="cy" v-bind:r="r" v-bind:width="width" :height="height"></circle>
+    </svg>
+    <br>
+    <span>width: →→{{ width }}</span>
+    <input type="range" min="0" max="1440" v-model="width">
+    <span>height: ↓↓{{ height }}</span>
+    <input type="range" min="0" max="900" v-model="height">
+    <span>cx: ←{{ cx }}→</span>
+    <input type="range" min="-1440" max="1440" v-model="cx">
+    <span>cy: ↓{{ cy }}↑</span>
+    <input type="range" min="-1440" max="2700" v-model="cy">
+    <span>r: ↙{{ r }}↗</span>
+    <input type="range" min="0" max="1440" v-model="r">
+  <br>
+  <!-- Color -->
+    <span>red</span>
+    <input type="range" v-model="red" min="0" max="250">
+    <span>green</span>
+    <input type="range" v-model="green" min="0" max="250">
+    <span>blue</span>
+    <input type="range" v-model="blue" min="0" max="250">
+    <br>
+    <button v-on:click="stroke=!stroke; strokeClick()">stroke</button>
+    <button v-on:click="strokeZero">stroke off</button>
+    <div v-if="stroke">
+      <span>strokeWidth</span>
+      <input type="range" v-model="strokeWidth">
+      <span>strokeRed</span>
+      <input type="range" v-model="strokeRed" min="0" max="250">
+      <span>strokeGreen</span>
+      <input type="range" v-model="strokeGreen" min="0" max="250">
+      <span>strokeBlue</span>
+      <input type="range" v-model="strokeBlue" min="0" max="250">
+    </div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+  </div><!-- #app -->
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="main.js"></script>
+</body>
+</html>
